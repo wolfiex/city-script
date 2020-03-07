@@ -94,7 +94,7 @@ module.exports = function findPaths(scene, options) {
 
     while (elapsedTime < timeLimit && explored < count) {
       let fromId = foundFromId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
-      let toID = foundToId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
+      let toId = foundToId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
 
 
       let found = pathFinder.find(fromId, toId).map(l => l.data);
