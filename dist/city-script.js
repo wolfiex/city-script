@@ -31,6 +31,8 @@ let distances = {
 
 module.exports = function findPaths(scene, options) {
   options = options || {};
+  
+  console.log(options)
 
   // We will be using seed random number generator, so that results are predictable.
   const random = createRandom(options.seed || 42);
@@ -95,7 +97,8 @@ module.exports = function findPaths(scene, options) {
     while (elapsedTime < timeLimit && explored < count) {
       let fromId = foundFromId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
       let toId = foundToId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
-
+      
+      console.log(foundFromId,foundToId)
 
       let found = pathFinder.find(fromId, toId).map(l => l.data);
 
