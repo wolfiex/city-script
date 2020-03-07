@@ -46,7 +46,8 @@ module.exports = function findPaths(scene, options) {
 
   // Should we search single source shortest paths, or just randomly sample graph?
   let foundFromId = getSourceNodeId(options.from);
-
+  let toId = getSourceNodeId(options.to);
+  
   // Sometimes they want to keep the original city. Otherwise let's clear it
   if (!options.keepScene) scene.clear();
 
@@ -93,9 +94,8 @@ module.exports = function findPaths(scene, options) {
 
     while (elapsedTime < timeLimit && explored < count) {
       let fromId = foundFromId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
-      
-      if (options.to){let toId = getSourceNodeId(options.to);console.log('using toId:',options.to}
-      else {let toId = nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];}
+      let toID = foundToId || nodeIds[Math.floor(random.nextDouble() * nodeIds.length)];
+
 
       let found = pathFinder.find(fromId, toId).map(l => l.data);
 
