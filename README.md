@@ -9,7 +9,7 @@ Load a city in https://anvaka.github.io/city-roads/, and then [open developer co
 In the console, type the following command to load the city scripts from this repository:
 
 ``` js
-let city = await requireModule('https://cdn.jsdelivr.net/gh/anvaka/city-script/dist/city-script.js');
+let city = await requireModule('https://cdn.jsdelivr.net/gh/wolfiex/city-script/dist/city-script.js');
 ```
 
 The `city` object is your access point to all the scripts in the current repository. While
