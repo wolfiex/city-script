@@ -29,6 +29,8 @@ let distances = {
   canberra
 }
 
+module.exports = toGraph;
+
 module.exports = function findPaths(scene, options) {
   options = options || {};
   
